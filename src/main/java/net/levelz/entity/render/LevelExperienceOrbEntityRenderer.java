@@ -20,7 +20,7 @@ import net.minecraft.util.math.RotationAxis;
 
 @Environment(EnvType.CLIENT)
 public class LevelExperienceOrbEntityRenderer extends EntityRenderer<LevelExperienceOrbEntity> {
-    private static final Identifier TEXTURE = new Identifier("textures/entity/experience_orb.png");
+    private static final Identifier TEXTURE = Identifier.of("textures/entity/experience_orb.png");
     private static final RenderLayer LAYER = RenderLayer.getItemEntityTranslucentCull(TEXTURE);
 
     public LevelExperienceOrbEntityRenderer(EntityRendererFactory.Context context) {

@@ -49,8 +49,8 @@ import net.minecraft.util.Identifier;
 @Environment(EnvType.CLIENT)
 public class SkillScreen extends Screen implements Tab {
 
-    public static final Identifier BACKGROUND_TEXTURE = new Identifier("levelz:textures/gui/skill_background.png");
-    public static final Identifier ICON_TEXTURES = new Identifier("levelz:textures/gui/icons.png");
+    public static final Identifier BACKGROUND_TEXTURE = Identifier.of("levelz:textures/gui/skill_background.png");
+    public static final Identifier ICON_TEXTURES = Identifier.of("levelz:textures/gui/icons.png");
 
     private final WidgetButtonPage[] skillButtons = new WidgetButtonPage[12];
     private final WidgetButtonPage[] levelButtons = new WidgetButtonPage[12];

@@ -19,7 +19,7 @@ import net.minecraft.util.Identifier;
 @Environment(EnvType.CLIENT)
 public class SkillInfoScreen extends Screen implements Tab {
 
-    public static final Identifier BACKGROUND_TEXTURE = new Identifier("levelz:textures/gui/skill_info_background.png");
+    public static final Identifier BACKGROUND_TEXTURE = Identifier.of("levelz:textures/gui/skill_info_background.png");
 
     private int backgroundWidth = 200;
     private int backgroundHeight = 215;

@@ -151,7 +151,7 @@ public class SkillScrollableWidget extends ScrollableWidget {
                     if (string.contains("minecraft:custom_")) {
                         string = sortedUnlockSkillList.get(u + g + 1).toString();
                     }
-                    Identifier identifier = new Identifier(string);
+                    Identifier identifier = Identifier.of(string);
                     boolean hit = true;
 
                     if (!Registries.BLOCK.get(identifier).equals(Blocks.AIR)) {

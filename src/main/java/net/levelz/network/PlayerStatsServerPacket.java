@@ -23,18 +23,18 @@ import net.minecraft.util.Identifier;
 
 public class PlayerStatsServerPacket {
 
-    public static final Identifier STATS_INCREASE_PACKET = new Identifier("levelz", "player_increase_stats");
-    public static final Identifier STATS_SYNC_PACKET = new Identifier("levelz", "player_sync_stats");
-    public static final Identifier XP_PACKET = new Identifier("levelz", "player_level_xp");
-    public static final Identifier LEVEL_PACKET = new Identifier("levelz", "player_level_stats");
-    public static final Identifier LIST_PACKET = new Identifier("levelz", "unlocking_list");
-    public static final Identifier STRENGTH_PACKET = new Identifier("levelz", "strength_sync");
-    public static final Identifier RESET_PACKET = new Identifier("levelz", "reset_skill");
-    public static final Identifier LEVEL_EXPERIENCE_ORB_PACKET = new Identifier("levelz", "level_experience_orb");
-    public static final Identifier SEND_CONFIG_SYNC_PACKET = new Identifier("levelz", "send_config_sync_packet");
-    public static final Identifier TAG_PACKET = new Identifier("levelz", "tag_packet");
-    public static final Identifier SEND_TAG_PACKET = new Identifier("levelz", "send_tag_packet");
-    public static final Identifier LEVEL_UP_BUTTON_PACKET = new Identifier("levelz", "level_up_button");
+    public static final Identifier STATS_INCREASE_PACKET = Identifier.of("levelz", "player_increase_stats");
+    public static final Identifier STATS_SYNC_PACKET = Identifier.of("levelz", "player_sync_stats");
+    public static final Identifier XP_PACKET = Identifier.of("levelz", "player_level_xp");
+    public static final Identifier LEVEL_PACKET = Identifier.of("levelz", "player_level_stats");
+    public static final Identifier LIST_PACKET = Identifier.of("levelz", "unlocking_list");
+    public static final Identifier STRENGTH_PACKET = Identifier.of("levelz", "strength_sync");
+    public static final Identifier RESET_PACKET = Identifier.of("levelz", "reset_skill");
+    public static final Identifier LEVEL_EXPERIENCE_ORB_PACKET = Identifier.of("levelz", "level_experience_orb");
+    public static final Identifier SEND_CONFIG_SYNC_PACKET = Identifier.of("levelz", "send_config_sync_packet");
+    public static final Identifier TAG_PACKET = Identifier.of("levelz", "tag_packet");
+    public static final Identifier SEND_TAG_PACKET = Identifier.of("levelz", "send_tag_packet");
+    public static final Identifier LEVEL_UP_BUTTON_PACKET = Identifier.of("levelz", "level_up_button");
 
     public static void init() {
         ServerPlayNetworking.registerGlobalReceiver(STATS_INCREASE_PACKET, (server, player, handler, buffer, sender) -> {

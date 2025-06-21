@@ -18,7 +18,7 @@ public class CompatInit {
 
     public static void init() {
         if (FabricLoader.getInstance().isModLoaded("placeholder-api")) {
-            Placeholders.register(new Identifier("levelz", "playerlevel"), (ctx, arg) -> {
+            Placeholders.register(Identifier.of("levelz", "playerlevel"), (ctx, arg) -> {
                 if (ctx.hasPlayer()) {
                     return PlaceholderResult.value(Integer.toString(((PlayerStatsManagerAccess) ctx.player()).getPlayerStatsManager().getOverallLevel()));
                 } else {

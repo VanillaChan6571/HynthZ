@@ -19,12 +19,12 @@ import net.minecraft.util.Identifier;
 @Environment(EnvType.CLIENT)
 public class RenderInit {
 
-    public static final Identifier GUI_ICONS = new Identifier("levelz:textures/gui/icons.png");
-    public static final Identifier SKILL_TAB_ICON = new Identifier("levelz:textures/gui/skill_tab_icon.png");
-    public static final Identifier BAG_TAB_ICON = new Identifier("levelz:textures/gui/bag_tab_icon.png");
+    public static final Identifier GUI_ICONS = Identifier.of("levelz:textures/gui/icons.png");
+    public static final Identifier SKILL_TAB_ICON = Identifier.of("levelz:textures/gui/skill_tab_icon.png");
+    public static final Identifier BAG_TAB_ICON = Identifier.of("levelz:textures/gui/bag_tab_icon.png");
 
-    public static final Identifier MINEABLE_INFO = new Identifier("levelz", "mineable_info");
-    public static final Identifier MINEABLE_LEVEL_INFO = new Identifier("levelz", "mineable_level_info");
+    public static final Identifier MINEABLE_INFO = Identifier.of("levelz", "mineable_info");
+    public static final Identifier MINEABLE_LEVEL_INFO = Identifier.of("levelz", "mineable_level_info");
 
     public static final boolean isInventorioLoaded = FabricLoader.getInstance().isModLoaded("inventorio");
 

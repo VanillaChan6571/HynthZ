@@ -33,7 +33,7 @@ public class LevelLoader implements SimpleSynchronousResourceReloadListener {
 
     @Override
     public Identifier getFabricId() {
-        return new Identifier("levelz", "level_loader");
+        return Identifier.of("levelz", "level_loader");
     }
 
     @Override
@@ -110,7 +110,7 @@ public class LevelLoader implements SimpleSynchronousResourceReloadListener {
                                 return;
                             }
                         }
-                        if (Registries.ITEM.get(new Identifier(data.get("object").getAsString())).toString().equals("air") && JsonHelper.getBoolean(data, "required", true)) {
+                        if (Registries.ITEM.get(Identifier.of(data.get("object").getAsString())).toString().equals("air") && JsonHelper.getBoolean(data, "required", true)) {
                             LOGGER.info("Resource {} was not loaded cause {} is not a valid item identifier", id.toString(), data.get("object").getAsString());
                             return;
                         }
@@ -130,7 +130,7 @@ public class LevelLoader implements SimpleSynchronousResourceReloadListener {
                                 return;
                             }
                         }
-                        if (Registries.ITEM.get(new Identifier(data.get("item").getAsString())).toString().equals("air") && JsonHelper.getBoolean(data, "required", true)) {
+                        if (Registries.ITEM.get(Identifier.of(data.get("item").getAsString())).toString().equals("air") && JsonHelper.getBoolean(data, "required", true)) {
                             LOGGER.info("Resource {} was not loaded cause {} is not a valid item identifier", id.toString(), data.get("item").getAsString());
                             return;
                         }
@@ -168,7 +168,7 @@ public class LevelLoader implements SimpleSynchronousResourceReloadListener {
                                 return;
                             }
                         }
-                        if (Registries.BLOCK.get(new Identifier(data.get("object").getAsString())).toString().equals("Block{minecraft:air}")) {
+                        if (Registries.BLOCK.get(Identifier.of(data.get("object").getAsString())).toString().equals("Block{minecraft:air}")) {
                             LOGGER.info("Resource {} was not loaded cause {} is not a valid block identifier", id.toString(), data.get("object").getAsString());
                             return;
                         }
@@ -188,7 +188,7 @@ public class LevelLoader implements SimpleSynchronousResourceReloadListener {
                                 return;
                             }
                         }
-                        if (Registries.BLOCK.get(new Identifier(data.get("block").getAsString())).toString().equals("Block{minecraft:air}")) {
+                        if (Registries.BLOCK.get(Identifier.of(data.get("block").getAsString())).toString().equals("Block{minecraft:air}")) {
                             LOGGER.info("Resource {} was not loaded cause {} is not a valid block identifier", id.toString(), data.get("block").getAsString());
                             return;
                         }
@@ -232,7 +232,7 @@ public class LevelLoader implements SimpleSynchronousResourceReloadListener {
                                 return;
                             }
                         }
-                        if (Registries.ENTITY_TYPE.get(new Identifier(data.get("object").getAsString())).toString().equals("entity.minecraft.pig")) {
+                        if (Registries.ENTITY_TYPE.get(Identifier.of(data.get("object").getAsString())).toString().equals("entity.minecraft.pig")) {
                             LOGGER.info("Resource {} was not loaded cause {} is not a valid entity identifier", id.toString(), data.get("object").getAsString());
                             return;
                         }
@@ -253,7 +253,7 @@ public class LevelLoader implements SimpleSynchronousResourceReloadListener {
                             }
                         }
                         if (!data.get("entity").getAsString().equals("minecraft:breeding")
-                                && Registries.ENTITY_TYPE.get(new Identifier(data.get("entity").getAsString())).toString().equals("entity.minecraft.pig")) {
+                                && Registries.ENTITY_TYPE.get(Identifier.of(data.get("entity").getAsString())).toString().equals("entity.minecraft.pig")) {
                             LOGGER.info("Resource {} was not loaded cause {} is not a valid entity identifier", id.toString(), data.get("entity").getAsString());
                             return;
                         }
@@ -374,33 +374,33 @@ public class LevelLoader implements SimpleSynchronousResourceReloadListener {
                 if (data.getAsJsonArray("block").get(i).getAsString().contains("#")) {
                     // tags are server sided and at this time here, client networking isn't established
                     // System.out.println(data.getAsJsonArray("block").get(i).getAsString() + " : " + data.getAsJsonArray("block").get(i).getAsString().replace("#", "") + " : "
-                    // + Registry.BLOCK.containsTag(TagKey.of(Registry.BLOCK_KEY, new Identifier(data.getAsJsonArray("block").get(i).getAsString().replace("#", "")))) + " : "
-                    // + TagKey.of(Registry.BLOCK_KEY, new Identifier(data.getAsJsonArray("block").get(i).getAsString().replace("#", ""))) + " : "
-                    // + new Identifier(data.getAsJsonArray("block").get(i).getAsString().replace("#", "")) + " : " + BlockTags.ACACIA_LOGS.id());
+                    // + Registry.BLOCK.containsTag(TagKey.of(Registry.BLOCK_KEY, Identifier.of(data.getAsJsonArray("block").get(i).getAsString().replace("#", "")))) + " : "
+                    // + TagKey.of(Registry.BLOCK_KEY, Identifier.of(data.getAsJsonArray("block").get(i).getAsString().replace("#", ""))) + " : "
+                    // + Identifier.of(data.getAsJsonArray("block").get(i).getAsString().replace("#", "")) + " : " + BlockTags.ACACIA_LOGS.id());
                     // this.tagId = TagKey.of(Registry.BLOCK_KEY, Identifier.fromCommandInput(this.reader));
                     // System.out.println(BlockTags.ACACIA_LOGS;
-                    // PlayerStatsClientPacket.writeC2STagPacket(new Identifier(data.getAsJsonArray("block").get(i).getAsString().replace("#", "")));
+                    // PlayerStatsClientPacket.writeC2STagPacket(Identifier.of(data.getAsJsonArray("block").get(i).getAsString().replace("#", "")));
                     // System.out.println(Blocks.ACACIA_LOG.getRegistryEntry().isIn(BlockTags.ACACIA_LOGS));
                     // System.out.println(Registry.BLOCK.getOrCreateEntryList(BlockTags.ACACIA_LOGS));
                     // // System.out.println(Registry.BLOCK_KEY.(BlockTags.ACACIA_LOGS));
                     // System.out.println(Registry.BLOCK.containsTag(TagKey.of(Registry.BLOCK_KEY, BlockTags.ACACIA_LOGS.id())) + " : "
-                    // + TagKey.of(Registry.BLOCK_KEY, new Identifier(data.getAsJsonArray("block").get(i).getAsString().replace("#", ""))) + " : "
-                    // + new Identifier(data.getAsJsonArray("block").get(i).getAsString().replace("#", "")) + " : " + BlockTags.ACACIA_LOGS.toString());
+                    // + TagKey.of(Registry.BLOCK_KEY, Identifier.of(data.getAsJsonArray("block").get(i).getAsString().replace("#", ""))) + " : "
+                    // + Identifier.of(data.getAsJsonArray("block").get(i).getAsString().replace("#", "")) + " : " + BlockTags.ACACIA_LOGS.toString());
                     LOGGER.info("{} might be a block tag but tags are not supported (yet?)", data.getAsJsonArray("block").get(i).getAsString());
                     continue;
-                } else if (Registries.BLOCK.get(new Identifier(data.getAsJsonArray("block").get(i).getAsString())).toString().equals("Block{minecraft:air}")) {
+                } else if (Registries.BLOCK.get(Identifier.of(data.getAsJsonArray("block").get(i).getAsString())).toString().equals("Block{minecraft:air}")) {
                     LOGGER.info("{} is not a valid block identifier", data.getAsJsonArray("block").get(i).getAsString());
                     continue;
                 }
-                idList.add(Registries.BLOCK.getRawId(Registries.BLOCK.get(new Identifier(data.getAsJsonArray("block").get(i).getAsString()))));
+                idList.add(Registries.BLOCK.getRawId(Registries.BLOCK.get(Identifier.of(data.getAsJsonArray("block").get(i).getAsString()))));
             }
         } else if (type == 2 || type == 3) {
             for (int i = 0; i < data.getAsJsonArray("item").size(); i++) {
-                if (Registries.ITEM.get(new Identifier(data.getAsJsonArray("item").get(i).getAsString())).toString().equals("air")) {
+                if (Registries.ITEM.get(Identifier.of(data.getAsJsonArray("item").get(i).getAsString())).toString().equals("air")) {
                     LOGGER.info("{} is not a valid item identifier", data.getAsJsonArray("item").get(i).getAsString());
                     continue;
                 }
-                idList.add(Registries.ITEM.getRawId(Registries.ITEM.get(new Identifier(data.getAsJsonArray("item").get(i).getAsString()))));
+                idList.add(Registries.ITEM.getRawId(Registries.ITEM.get(Identifier.of(data.getAsJsonArray("item").get(i).getAsString()))));
             }
         }
 

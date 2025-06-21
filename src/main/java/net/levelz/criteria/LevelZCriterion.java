@@ -11,7 +11,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Identifier;
 
 public class LevelZCriterion extends AbstractCriterion<LevelZCriterion.Conditions> {
-    private static final Identifier ID = new Identifier("levelz:level");
+    private static final Identifier ID = Identifier.of("levelz:level");
 
     @Override
     public Identifier getId() {
